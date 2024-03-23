@@ -1,4 +1,4 @@
-import { dirty } from "./dirty.js"
+import { dirty } from "./dirty.js";
 
 export interface QueueEvent<T> {
 	iterator: AsyncGenerator<T>;
@@ -17,13 +17,13 @@ export async function event<T>() {
 
 			await marker.signal();
 		}
-	}
+	};
 
 	return {
 		iterator: iterator(),
 		enqueue: async (item: T) => {
 			items.push(item);
 			marker.emit();
-		}
-	}
+		},
+	};
 }

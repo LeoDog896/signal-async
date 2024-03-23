@@ -1,7 +1,7 @@
-import { expect, test } from 'vitest'
-import { event } from '../src/index.js';
+import { expect, test } from "vitest";
+import { event } from "../src/index.js";
 
-test('event filo queue', async (): Promise<void> => {
+test("event filo queue", async (): Promise<void> => {
 	const listener = await event<number>();
 
 	return new Promise<void>(async (resolve) => {

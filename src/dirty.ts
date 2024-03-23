@@ -20,6 +20,6 @@ export function dirty() {
 			return new Promise<void>((resolve) => {
 				resolveQueue.push(resolve);
 			});
-		}
-	}
+		},
+	};
 }
