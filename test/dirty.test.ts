@@ -3,10 +3,10 @@ import { dirty } from "../src/index.js";
 
 test("dirty marker works", () => {
 	return new Promise<void>((resolve) => {
-		const marker = dirty();
+		const { signal, emit } = dirty();
 
-		marker.signal().then(() => resolve());
+		signal().then(() => resolve());
 
-		marker.emit();
+		emit();
 	});
 });
