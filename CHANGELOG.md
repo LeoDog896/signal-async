@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+Add `state` signal.
+
 ## 0.1.3
 
 Update docs in README to not use generics on dirty (it doesn't have any?)

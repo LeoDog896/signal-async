@@ -10,3 +10,16 @@ test("dirty marker works", () => {
 		emit();
 	});
 });
+
+test("dirty marker doesn't work backwards", () => {
+	return new Promise<void>((resolve, reject) => {
+		const { signal, emit } = dirty();
+
+		emit();
+
+		queueMicrotask(() => {
+			signal().then(() => reject());
+			queueMicrotask(resolve);
+		});
+	});
+});

@@ -1,8 +1,8 @@
 import { dirty } from "./dirty.js";
 
 export interface QueueEvent<T> {
-	iterator: AsyncGenerator<T>;
-	enqueue: (...item: T[]) => Promise<void>;
+	readonly iterator: AsyncGenerator<T>;
+	enqueue(...item: T[]): Promise<void>;
 }
 
 /**
@@ -41,7 +41,7 @@ export function event<T>(): QueueEvent<T> {
 
 	return {
 		iterator: iterator(),
-		enqueue: async (item: T) => {
+		async enqueue(item: T) {
 			items.push(item);
 			marker.emit();
 		},

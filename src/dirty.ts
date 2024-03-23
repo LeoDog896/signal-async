@@ -5,11 +5,11 @@ export interface Dirty {
 	/**
 	 * Emits a signal, triggering all listeners.
 	 */
-	emit: () => void;
+	emit(): void;
 	/**
 	 * Waits for the signal to be emitted. Single-use.
 	 */
-	signal: () => Promise<void>;
+	signal(): Promise<void>;
 }
 
 /**
@@ -49,13 +49,13 @@ export function dirty() {
 	const resolveQueue: (() => void)[] = [];
 
 	return {
-		emit: () => {
+		emit() {
 			// preserve FILO order
 			while (resolveQueue.length > 0) {
 				resolveQueue.shift()!();
 			}
 		},
-		signal: () => {
+		signal() {
 			return new Promise<void>((resolve) => {
 				resolveQueue.push(resolve);
 			});

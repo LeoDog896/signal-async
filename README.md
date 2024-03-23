@@ -29,6 +29,17 @@ signal().then(() => {
 emit();
 ```
 
+However, if a signal is emitted before a listener is attached,
+the listener will not be triggered.
+
+```typescript
+emit();
+
+signal().then(() => {
+	console.log('signal received'); // not triggered
+});
+```
+
 ### Events
 
 Events build on top of [dirty](#dirty) signals.
@@ -46,4 +57,29 @@ enqueue(2);
 for await (const item of iterator) {
 	console.log(item);	// 1, 2
 }
+```
+
+### State
+
+State allows for listening for a certain value,
+perfect for waiting for a 'ready' state or transmitting
+IO between async contexts.
+
+```typescript
+import { state } from 'signal-async';
+
+const { waitFor, set } = state<number>(1);
+
+waitFor(2).then(() => console.log("this will print!"));
+
+set(2);
+```
+
+Unlike dirty, this works even if the value is set before
+the listener is attached.
+
+```typescript
+set(2);
+
+waitFor(2).then(() => console.log("this will print!"));
 ```
