@@ -4,7 +4,16 @@
 	"description": "distinct utilities for signaling data in async contexts",
 	"type": "module",
 	"main": "dist/index.js",
+	"module": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js"
+		},
+		"./dist/index.js": {
+			"import": "./dist/index.js"
+		}
+	},
 	"scripts": {
 		"build": "tsc",
 		"prepublishOnly": "npm run build",
