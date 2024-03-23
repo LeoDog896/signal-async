@@ -20,7 +20,7 @@ They trigger active listeners when they are emitted to.
 ```typescript
 import { dirty } from 'signal-async';
 
-const { emit, signal } = dirty<number>();
+const { emit, signal } = dirty();
 
 signal().then(() => {
 	console.log('signal received');
