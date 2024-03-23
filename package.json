@@ -1,5 +1,5 @@
 {
-	"name": "async-signal",
+	"name": "signal-async",
 	"version": "0.1.0",
 	"description": "distinct utilities for signaling data in async contexts",
 	"type": "module",
@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/LeoDog896/async-signal.git"
+		"url": "git+https://github.com/LeoDog896/signal-async.git"
 	},
 	"keywords": [
 		"queue",
@@ -26,7 +26,7 @@
 	"author": "Tristan F.",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/LeoDog896/async-signal/issues",
+		"url": "https://github.com/LeoDog896/signal-async/issues",
 		"email": "leodog896@gmail.com"
 	},
 	"files": [
@@ -35,7 +35,7 @@
 		"LICENSE",
 		"README.md"
 	],
-	"homepage": "https://github.com/LeoDog896/async-signal#readme",
+	"homepage": "https://github.com/LeoDog896/signal-async#readme",
 	"devDependencies": {
 		"prettier": "3.2.5",
 		"typescript": "^5.4.3",
