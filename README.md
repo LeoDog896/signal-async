@@ -1,5 +1,7 @@
 # signal-async
 
+[![NPM Version](https://img.shields.io/npm/v/signal-async)](https://npmjs.com/package/signal-async)
+
 distinct utilities for signaling in async contexts.
 
 ## Installation
