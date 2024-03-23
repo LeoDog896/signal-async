@@ -1,0 +1,34 @@
+{
+  "name": "async-signal",
+  "version": "1.0.0",
+  "description": "distinct utilities for signaling data in async contexts",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoDog896/queue-async-iterator.git"
+  },
+  "keywords": [
+    "queue",
+    "async",
+    "iterator",
+    "listen",
+    "filo"
+  ],
+  "author": "Tristan F.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LeoDog896/queue-async-iterator/issues"
+  },
+  "homepage": "https://github.com/LeoDog896/queue-async-iterator#readme",
+  "devDependencies": {
+    "typescript": "^5.4.3",
+    "vitest": "^1.4.0"
+  }
+}
